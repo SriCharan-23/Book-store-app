@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block head %}
+<meta name="description" content="Get in touch with PageTurn Books. We'd love to hear from you.">
+{% endblock %}
+
+{% block content %}
+<section class="contact-hero">
+    <h1 class="section-title">Get In <span class="text-accent">Touch</span></h1>
+    <p class="contact-lead">Have a question, suggestion, or just want to say hello? We'd love to hear from you.</p>
+</section>
+
+<section class="contact-section">
+    <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper" id="contact-form-wrapper">
+            <h2>Send Us a Message</h2>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Full Name</label>
+                    <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-subject">Subject</label>
+                    <input type="text" id="contact-subject" name="subject" placeholder="How can we help?" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" rows="5" placeholder="Tell us more..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="contact-submit">Send Message</button>
+            </form>
+            <div class="form-status" id="form-status"></div>
+        </div>
+
+        <!-- Contact Info Sidebar -->
+        <div class="contact-info">
+            <div class="info-card">
+                <div class="info-icon">📍</div>
+                <h3>Visit Us</h3>
+                <p>123 Library Lane<br>Booktown, BK 10001</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">📧</div>
+                <h3>Email Us</h3>
+                <p>hello@pageturnbooks.com</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">📞</div>
+                <h3>Call Us</h3>
+                <p>+1 (555) 012-3456</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🕐</div>
+                <h3>Hours</h3>
+                <p>Mon – Fri: 9AM – 7PM<br>Sat – Sun: 10AM – 5PM</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('contact-submit');
+    const status = document.getElementById('form-status');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    const data = {
+        name: document.getElementById('contact-name').value,
+        email: document.getElementById('contact-email').value,
+        subject: document.getElementById('contact-subject').value,
+        message: document.getElementById('contact-message').value,
+    };
+
+    try {
+        const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+        const result = await res.json();
+        status.className = 'form-status ' + (result.status === 'success' ? 'success' : 'error');
+        status.textContent = result.message;
+        status.style.display = 'block';
+        if (result.status === 'success') {
+            document.getElementById('contact-form').reset();
+        }
+    } catch {
+        status.className = 'form-status error';
+        status.textContent = 'Network error. Please try again.';
+        status.style.display = 'block';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+    }
+});
+</script>
+{% endblock %}

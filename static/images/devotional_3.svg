@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B2A4A"/>
+      <stop offset="100%" style="stop-color:#2C3E6B"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="400" height="560" rx="8" fill="url(#bg)"/>
+  <rect x="30" y="30" width="340" height="500" rx="4" fill="none" stroke="#C8A951" stroke-width="1" opacity="0.3"/>
+  <line x1="50" y1="380" x2="350" y2="380" stroke="#C8A951" stroke-width="1" opacity="0.4"/>
+  <text x="200" y="240" text-anchor="middle" fill="#C8A951" font-size="64" font-family="serif">☀</text>
+  <text x="200" y="300" text-anchor="middle" fill="white" font-size="28" font-family="serif" font-weight="bold" filter="url(#shadow)">The Daily</text>
+  <text x="200" y="336" text-anchor="middle" fill="white" font-size="28" font-family="serif" font-weight="bold" filter="url(#shadow)">Stoic</text>
+  <text x="200" y="430" text-anchor="middle" fill="#C8A951" font-size="14" font-family="serif" opacity="0.6">PAGETURN BOOKS</text>
+</svg>

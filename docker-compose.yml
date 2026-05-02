@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # Map a local folder to the container's app directory to persist the SQLite database
+      - ./data:/app/data
+    environment:
+      # Point the application to the persisted database path
+      - DATABASE_URL=sqlite:////app/data/books.db

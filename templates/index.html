@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block head %}
+<meta name="description" content="Browse and shop curated books in Self-Help, Devotional, Business, and Education at PageTurn Books.">
+{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════ HERO SECTION ═══════════ -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Discover Your Next <span class="text-accent">Great Read</span></h1>
+        <p class="hero-subtitle">Handpicked books across Self-Help, Devotional, Business &amp; Education — curated for the curious mind.</p>
+        <a href="#shop" class="btn btn-primary hero-cta">Browse Collection</a>
+    </div>
+    <div class="hero-decoration">
+        <div class="hero-book-stack">
+            <div class="hero-book hb-1"></div>
+            <div class="hero-book hb-2"></div>
+            <div class="hero-book hb-3"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ SHOP SECTION ═══════════ -->
+<section class="shop-section" id="shop">
+    <div class="shop-header">
+        <h2 class="section-title">Our Collection</h2>
+        <p class="section-subtitle">Filter by category to find exactly what you're looking for</p>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-category="all" id="filter-all">All Books</button>
+        <button class="filter-btn" data-category="Self-Help" id="filter-self-help">Self-Help</button>
+        <button class="filter-btn" data-category="Devotional" id="filter-devotional">Devotional</button>
+        <button class="filter-btn" data-category="Business" id="filter-business">Business</button>
+        <button class="filter-btn" data-category="Education" id="filter-education">Education</button>
+    </div>
+
+    <!-- Book Grid -->
+    <div class="book-grid" id="book-grid">
+        <!-- Populated by shop.js -->
+        <div class="loading-spinner" id="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading books...</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/shop.js"></script>
+{% endblock %}
