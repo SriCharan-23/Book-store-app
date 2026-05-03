@@ -91,7 +91,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-👉 Open: http://localhost:8080
+👉 Open: http://localhost:8080   To deploy project on cloud run it is important to run on port 8080
 
 ---
 
