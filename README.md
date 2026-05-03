@@ -20,6 +20,7 @@ The application combines:
 * Jinja2 templating 🎨
 * SQLAlchemy ORM 🗄️
 * Cloud deployment ☁️
+* HTML, CSS and JS for frontend and styling
 
 ---
 
