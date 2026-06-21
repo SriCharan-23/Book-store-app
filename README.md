@@ -139,3 +139,5 @@ This application is deployed using:
 If you like this project, consider giving it a ⭐ on GitHub!
 
 ---
+
+This project was completed during the GeeksforGeeks × Google Developers' Agent Builder Camp, an online workshop held in May. I attended a particular session focused on Antigravity (vibe coding). The task was to create an application using Antigravity and deploy it on Cloud Run.
