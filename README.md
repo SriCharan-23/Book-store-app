@@ -1,12 +1,6 @@
 # 📚 PageTurn Books — FastAPI E-Commerce Application
 
-A modern, full-stack **Book Store Web Application** built using **FastAPI**, featuring dynamic UI rendering, RESTful APIs, and deployed on the cloud using **Docker** and **Google Cloud Run**.
-
----
-
-## 🚀 Live Demo
-
-🔗 *https://bookstore-app-768123148807.asia-south1.run.app/*
+A modern, full-stack **Book Store Web Application** built using **FastAPI**, featuring dynamic UI rendering, RESTful APIs.
 
 ---
 
