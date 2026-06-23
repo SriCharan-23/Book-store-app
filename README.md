@@ -98,16 +98,6 @@ docker run -p 8080:8080 bookstore-app
 ```
 
 ---
-
-## ☁️ Cloud Deployment
-
-This application is deployed using:
-
-* Docker containerization
-* Google Cloud Run (serverless deployment)
-
----
-
 ## 📈 Key Learnings
 
 * Building RESTful APIs using FastAPI
